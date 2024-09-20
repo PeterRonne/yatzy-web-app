@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/css/styles.css" />
+        <script type="module" src="index.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-container">
+                <div class="dice dice-hover"><img src="images/question-mark.svg" alt="" /></div>
+                <div class="dice dice-hover"><img src="images/question-mark.svg" alt="" /></div>
+                <div class="dice dice-hover"><img src="images/question-mark.svg" alt="" /></div>
+                <div class="dice dice-hover"><img src="images/question-mark.svg" alt="" /></div>
+                <div class="dice dice-hover"><img src="images/question-mark.svg" alt="" /></div>
+                <span id="turn">Turn 1</span>
+                <button class="roll-btn">Roll</button>
+            </div>
+            <div class="lower-container">
+                <!-- Upper section fields -->
+                <label for="ones">1-s</label>
+                <input type="text" id="ones" class="input-hover" value="0" readonly />
+                <label for="twos">2-s</label>
+                <input type="text" id="twos" class="input-hover" value="0" readonly />
+                <label for="threes">3-s</label>
+                <input type="text" id="threes" class="input-hover" value="0" readonly />
+                <label for="fours">4-s</label>
+                <input type="text" id="fours" class="input-hover" value="0" readonly />
+                <label for="fives">5-s</label>
+                <input type="text" id="fives" class="input-hover" value="0" readonly />
+                <label for="sixes" class="sixes-label">6-s</label>
+                <input type="text" id="sixes" class="input-hover" value="0" readonly />
+
+                <!-- Sum and Bonus -->
+                <label for="sum" class="sum-label">Sum: <input type="text" id="sum" value="0" readonly /></label>
+                <label for="bonus" class="bonus-label">Bonus: <input type="text" id="bonus" value="0" readonly /></label>
+
+                <!-- Lower section fields -->
+                <label for="one-pair">One pair</label>
+                <input type="text" id="one-pair" class="input-hover" value="0" readonly />
+                <label for="two-pair">Two pairs</label>
+                <input type="text" id="two-pair" class="input-hover" value="0" readonly />
+                <label for="three-kind">Three of a kind</label>
+                <input type="text" id="three-kind" class="input-hover" value="0" readonly />
+                <label for="four-kind">Four of a kind</label>
+                <input type="text" id="four-kind" class="input-hover" value="0" readonly />
+                <label for="full-house">Full house</label>
+                <input type="text" id="full-house" class="input-hover" value="0" readonly />
+                <label for="small-straight">Small straight</label>
+                <input type="text" id="small-straight" class="input-hover" value="0" readonly />
+                <label for="large-straight">Large straight</label>
+                <input type="text" id="large-straight" class="input-hover" value="0" readonly />
+                <label for="chance">Chance</label>
+                <input type="text" id="chance" class="input-hover" value="0" readonly />
+                <label for="yatzy">Yatzy</label>
+                <input type="text" id="yatzy" class="input-hover" value="0" readonly />
+
+                <!-- Total -->
+                <label for="total" class="total-label">Total: <input type="text" id="total" value="0" readonly /></label>
+            </div>
+        </div>
+    </body>
+</html>

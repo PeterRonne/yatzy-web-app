@@ -1,0 +1,138 @@
+body {
+    padding: 50px;
+    color: black;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    margin: auto;
+    width: 500px;
+    height: 80%;
+    /* border: 3px solid rgb(134, 134, 134); */
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.top-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border: 3px solid rgb(134, 134, 134);
+    border-radius: 10px;
+}
+
+#turn {
+    margin: 10px;
+}
+
+.roll-btn {
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    justify-self: end;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.1s ease, border-width 0.1s ease;
+}
+
+.roll-btn:hover {
+    border-color: #007bff;
+    border-width: 3px;
+}
+
+.dice {
+    width: 55px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid transparent;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.dice-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dice-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}
+
+.locked {
+    border-color: #28a745;
+    background-color: #e9f5ff;
+    opacity: 0.5;
+}
+
+.dice img {
+    /* width: 55px;
+    height: 55px; */
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+input {
+    cursor: default;
+    outline: none;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.input-hover {
+    transition: border-color 0.1s ease, background-color 0.1s ease;
+}
+
+.input-hover:hover {
+    border-color: #007bff;
+    background-color: #e9f5ff;
+}
+
+input.saved {
+    background-color: #d4edda;
+    border-color: #28a745;
+    cursor: not-allowed;
+}
+
+.lower-container input {
+    width: 40px;
+}
+
+.lower-container {
+    display: grid;
+    grid-template-columns: auto 50px auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    padding: 20px;
+    border: 3px solid rgb(134, 134, 134);
+    border-radius: 10px;
+}
+
+.lower-container label {
+    grid-column: 1;
+}
+
+.lower-container .sum-label {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.lower-container .bonus-label,
+.lower-container .total-label {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
