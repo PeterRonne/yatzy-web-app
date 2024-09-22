@@ -28,7 +28,7 @@ function toggleLock(index) {
 
 function showDice() {
     if (gameManager.nrOfThrowsLeft > 0) {
-        const diceSound = new Audio("soundEffects/dice_shake.mp3");
+        const diceSound = new Audio("audio/dice_shake.mp3");
         diceSound.play();
 
         let eyes = gameManager.throwDice();
@@ -67,7 +67,7 @@ function showNumberOfThrowsLeft() {
 }
 
 function resetDice() {
-    const click = new Audio("soundEffects/click.mp3");
+    const click = new Audio("audio/click.mp3");
     click.play();
 
     for (const die of dice) {
@@ -106,7 +106,7 @@ function saveScore(index) {
 }
 
 function newGame() {
-    if (confirm("Want to play again\nEither OK or Cancel.")) {
+    if (confirm(`Your final score was ${gameManager.getTotal()}\nDo you want to play again?`)) {
         window.location.reload();
     }
 }
