@@ -8,7 +8,7 @@ export class Game {
         this.total = 0;
         this.raffleCup = new RaffleCup();
         this.yatzyCalculator = new YatzyCalculator(this.raffleCup);
-        this.nrOfThrowsLeft = 4;
+        this.nrOfThrowsLeft = 3;
         this.gameOver = false;
     }
 

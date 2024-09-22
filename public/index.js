@@ -5,8 +5,8 @@ let gameManager = new Game();
 const rollBtn = document.querySelector(".roll-btn");
 rollBtn.addEventListener("click", showDice);
 rollBtn.addEventListener("click", showScore);
-let btnClick = -1;
-showDice();
+let btnClick = 0;
+// showDice();
 
 const dice = document.querySelectorAll(".dice");
 dice.forEach((die, index) => die.addEventListener("click", () => toggleLock(index)));
@@ -27,41 +27,49 @@ function toggleLock(index) {
 }
 
 function showDice() {
-    let eyes = gameManager.throwDice();
-    let images = document.querySelectorAll("img");
-    for (let i = 0; i < eyes.length; i++) {
-        switch (eyes[i]) {
-            case 1:
-                images[i].src = "images/dice-1.svg";
-                break;
-            case 2:
-                images[i].src = "images/dice-2.svg";
-                break;
-            case 3:
-                images[i].src = "images/dice-3.svg";
-                break;
-            case 4:
-                images[i].src = "images/dice-4.svg";
-                break;
-            case 5:
-                images[i].src = "images/dice-5.svg";
-                break;
-            case 6:
-                images[i].src = "images/dice-6.svg";
-                break;
-            default:
-                break;
+    if (gameManager.nrOfThrowsLeft > 0) {
+        const diceSound = new Audio("soundEffects/dice_shake.mp3");
+        diceSound.play();
+
+        let eyes = gameManager.throwDice();
+        let images = document.querySelectorAll("img");
+        for (let i = 0; i < eyes.length; i++) {
+            switch (eyes[i]) {
+                case 1:
+                    images[i].src = "images/dice-1.svg";
+                    break;
+                case 2:
+                    images[i].src = "images/dice-2.svg";
+                    break;
+                case 3:
+                    images[i].src = "images/dice-3.svg";
+                    break;
+                case 4:
+                    images[i].src = "images/dice-4.svg";
+                    break;
+                case 5:
+                    images[i].src = "images/dice-5.svg";
+                    break;
+                case 6:
+                    images[i].src = "images/dice-6.svg";
+                    break;
+                default:
+                    break;
+            }
         }
+        showNumberOfThrowsLeft();
+        btnClick++;
     }
-    showNumberOfThrowsLeft();
-    btnClick++;
 }
 
 function showNumberOfThrowsLeft() {
-    document.querySelector("#turn").innerHTML = `Turn ${gameManager.nrOfThrowsLeft}`;
+    document.querySelector("#turn").innerHTML = `Turns left ${gameManager.nrOfThrowsLeft}`;
 }
 
 function resetDice() {
+    const click = new Audio("soundEffects/click.mp3");
+    click.play();
+
     for (const die of dice) {
         die.classList.remove("locked");
         die.classList.add("dice-hover");
